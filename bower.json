@@ -1,0 +1,17 @@
+{
+  "name": "angular-test",
+  "description": "Angular test",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-animate": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "angular-aria": "*",
+    "bootstrap": "3.3.x",
+    "jquery": "2.2.x",
+    "angular-ui-sortable": "^0.14.3",
+    "angular-local-storage": "^0.2.7"
+  }
+}

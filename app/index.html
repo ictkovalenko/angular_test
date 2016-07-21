@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular test</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.min.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="services/list-item.service.js"></script>
+    <script src="controllers/list-items.controller.js"></script>
+</head>
+<body>
+    <div class="view-container">
+        <div ng-controller="ListItemsController as listItems" ng-init="listItems.init()">
+            <md-button ng-click="listItems.deleteChecked()">Delete checked</md-button>
+
+            <md-list ui-sortable="listItems.sortableOptions" ng-model="listItems.items">
+                <md-list-item ng-repeat="item in listItems.items">
+                    <md-checkbox ng-model="item.checked"></md-checkbox>
+                    <p>{{item.name}}</p>
+                    <md-button class="md-secondary" ng-click="listItems.deleteItem(item)">Delete</md-button>
+                    <md-button class="md-secondary" ng-click="listItems.editItem(item)">Edit</md-button>
+                </md-list-item>
+            </md-list>
+
+            <form>
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input name="description" ng-model="listItems.item.name">
+                </md-input-container>
+
+                <md-button ng-click="listItems.addItem()">Add</md-button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
